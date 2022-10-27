@@ -10,6 +10,8 @@ const AdminBro = require("admin-bro");
 const options = require("./server/admin/admin-option");
 const admin = new AdminBro(options);
 
+// mongo url
+//  mongodb+srv://root:<password>@cluster0.hyb7fvq.mongodb.net/?retryWrites=true&w=majority
 const adminLogin = {
   email: "root@admin.com",
   password: "toor123",
