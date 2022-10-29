@@ -1,12 +1,12 @@
-require('dotenv').config()
+require("dotenv").config();
 const express = require("express");
 const app = express();
 // const mysql = require("mysql");
+require("./server/db/conn"); //for mongo
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const userRoute = require("./server/router/user-router");
 // const sequelize = require("./server/db/conn"); // for mysql
-const mongoose = require("./server/db/conn"); // for mongo
 // const AdminBroExpress = require("admin-bro-expressjs");
 // const AdminBro = require("admin-bro");
 // const options = require("./server/admin/admin-option");
@@ -50,9 +50,6 @@ app.get("/", (req, res) => {
 // } catch (error) {
 //   console.error("Unable to connect to the database:", error);
 // }
-
-// for mongo
-require("./server/db/conn")
 
 app.use("/", userRoute);
 // app.use(admin.options.rootPath, router);

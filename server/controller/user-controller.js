@@ -5,7 +5,7 @@ const { bulkBuild } = require("../models/User");
 const register = async (req, res) => {
   try {
     const { name, email, password, phonenumber } = req.body;
-    const user = await User.create({ name, email, password, phonenumber });
+    const user = new User({ name, email, password, phonenumber });
     await user.save();
     return res
       .status(200)
