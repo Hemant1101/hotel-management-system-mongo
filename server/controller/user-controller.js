@@ -40,7 +40,7 @@ const login = async (req, res) => {
 // ("/api/rooms",
 const getrooms = async (req, res) => {
   try {
-    const rooms = await Rooms.findAll();
+    const rooms = await Rooms.find();
     // db.query("SELECT * FROM roomlist", (err, result) => {});
     // console.log(rooms);
     res.status(200);
