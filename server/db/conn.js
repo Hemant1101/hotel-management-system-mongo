@@ -17,15 +17,11 @@ const mongoDb = process.env.dbUrl;
 mongoose
   .connect(mongoDb, {
     useNewUrlParser: true,
-    useCreateIndex: true,
     useUnifiedTopology: true,
-    useFindAndModify: false,
   })
   .then(() => {
-    console.log("Connection successfull");
+    console.log("Connection successful");
   })
   .catch((error) => {
     console.log("unable to connect with database");
   });
-
-module.exports = mongoose;

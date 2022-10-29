@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require("express");
 const app = express();
 // const mysql = require("mysql");
@@ -51,7 +52,7 @@ app.get("/", (req, res) => {
 // }
 
 // for mongo
-const db = mongoose.connection;
+require("./server/db/conn")
 
 app.use("/", userRoute);
 // app.use(admin.options.rootPath, router);
