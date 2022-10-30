@@ -1,20 +1,18 @@
 require("dotenv").config();
 const express = require("express");
 const app = express();
-// const mysql = require("mysql");
 require("./server/db/conn"); //for mongo
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const userRoute = require("./server/router/user-router");
-// const sequelize = require("./server/db/conn"); // for mysql
 // const AdminBroExpress = require("admin-bro-expressjs");
 // const AdminBro = require("admin-bro");
 // const options = require("./server/admin/admin-option");
 // const admin = new AdminBro(options);
 
 const adminLogin = {
-  email: "root@admin.com",
-  password: "toor123",
+  email: process.env.adminLogin_email, // "root@admin.com",
+  password: process.env.adminLogin_password, // "toor123",
 };
 // const router = AdminBroExpress.buildAuthenticatedRouter(admin, {
 //   authenticate: async (email, password) => {
@@ -43,13 +41,6 @@ app.get("/", (req, res) => {
     url: "http://localhost:5000",
   });
 });
-// for mysql:
-// try {
-//   sequelize.authenticate();
-//   console.log("Connection has been established successfully.");
-// } catch (error) {
-//   console.error("Unable to connect to the database:", error);
-// }
 
 app.use("/", userRoute);
 // app.use(admin.options.rootPath, router);

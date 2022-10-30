@@ -22,10 +22,8 @@ const login = async (req, res) => {
     const email = req.body.email;
     const password = req.body.password;
     const user = await User.findOne({
-      where: {
-        email: email,
-        password: password,
-      },
+      email: email,
+      password: password,
     });
     if (!user) {
       return res.status(400).json({ status: 200, message: "Email not found" });
@@ -41,8 +39,6 @@ const login = async (req, res) => {
 const getrooms = async (req, res) => {
   try {
     const rooms = await Rooms.find();
-    // db.query("SELECT * FROM roomlist", (err, result) => {});
-    // console.log(rooms);
     res.status(200);
     return res.status(200).json({ rooms: rooms });
   } catch (error) {
@@ -65,8 +61,7 @@ const getrooms = async (req, res) => {
 const getuserdata = async (req, res) => {
   try {
     const usid = req.query.searchid;
-    // console.log(req.query.searchid);
-    const usersdata = await User.findOne({ where: { id: usid } });
+    const usersdata = await User.findOne({ _id: usid });
     res.status(200);
     // console.log(usersdata);
     return res.status(200).json({ user: usersdata });
@@ -78,10 +73,8 @@ const getuserdata = async (req, res) => {
 const getroomdata = async (req, res) => {
   try {
     const usid = req.query.searchid;
-    // console.log(req.query.searchid);
-    const roomsdata = await Rooms.findOne({ where: { type: usid } });
+    const roomsdata = await Rooms.findOne({ type: usid });
     res.status(200);
-    // console.log(usersdata);
     return res.status(200).json({ rooms: roomsdata });
   } catch (error) {
     return res.status(500).json({ message: "roomsdata not found" });

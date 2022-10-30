@@ -18,7 +18,6 @@ import LoginPage from "./components/pages/LoginPage";
 function App() {
   return (
     <Router>
-      {/* <Navbar /> */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/sign-up" element={<SignUp />} />

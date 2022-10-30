@@ -7,7 +7,7 @@ const Login = () => {
   const [isLoggedin, setIsLoggedin] = useState(false);
   const submitloginform = () => {
     // if
-    console.log("setlogi true");
+    console.log("setlogin true");
     setIsLoggedin(true);
   };
   return (

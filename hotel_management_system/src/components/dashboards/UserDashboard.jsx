@@ -15,7 +15,7 @@ function UserDashboard() {
   const [username, setusername] = useState("");
   const [useremail, setuseremail] = useState("");
   async function getdata() {
-    const usid = Number(localStorage.getItem("login"));
+    const usid = String(localStorage.getItem("login"));
     setuserid(usid);
     Axios.get("http://localhost:5000/api/getuserdata", {
       params: {
@@ -23,7 +23,6 @@ function UserDashboard() {
       },
     }).then((res) => {
       const result = res.data;
-      // console.log(result);
       const usemail = result["user"]["email"];
       const usname = result["user"]["name"];
       setuseremail(usemail);
@@ -90,13 +89,6 @@ function UserDashboard() {
               </Link>
               <span className="tooltip">Home</span>
             </li>
-            {/*<li>
-              <a href="#">
-                <i className="bx bx-cog"></i>
-                <span className="links_name">Setting</span>
-              </a>
-              <span className="tooltip">Setting</span>
-            </li> */}
             <li className="profile">
               <div className="profile-details">
                 {/* <img src="profile.jpg" alt="profileImg" /> */}

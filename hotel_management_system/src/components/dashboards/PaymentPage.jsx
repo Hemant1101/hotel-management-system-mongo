@@ -230,7 +230,6 @@ const PaymentPage = (props) => {
               <h4>
                 No of rooms
                 <span className="price" style={{ color: "black" }}>
-                  {/* <i className="fa fa-shopping-cart"></i> */}
                   <b>{values.roomnumber}</b>
                 </span>
               </h4>

@@ -34,7 +34,7 @@ const useLogin = (callback, validate) => {
           results["user"]["password"] === values.password
         ) {
           callback();
-          localStorage.setItem("login", results["user"]["id"]);
+          localStorage.setItem("login", results["user"]["_id"]);
         } else {
           alert("wrong email/password");
           console.log(results);
