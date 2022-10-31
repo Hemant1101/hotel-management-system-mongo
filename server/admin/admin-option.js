@@ -8,7 +8,7 @@ const Rooms = require("../models/Rooms");
 
 const admin = new adminjs(
     {
-        resources: [User, Rooms],
+        resources: [Users, Rooms],
         branding: {
             companyName: "Hotel Management System Admin",
             softwareBrothers: false,
