@@ -9,8 +9,6 @@ function Room() {
     async function getData() {
       const response = await fetch("http://localhost:5000/api/rooms");
       const data = await response.json();
-      console.log(data);
-      console.log(data["rooms"]);
       setRoomitems(data["rooms"]);
     }
   }, []);
@@ -18,7 +16,6 @@ function Room() {
   return (
     <>
       {Roomitems.map((item) => {
-        console.log(item);
         return (
           <div key={item["_id"]} className="room">
             <div className="room-flex-contain">

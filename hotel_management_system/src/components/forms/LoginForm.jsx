@@ -2,7 +2,6 @@ import React from "react";
 import useLogin from "./useLogin";
 import { Link } from "react-router-dom";
 import validateInfo from "./validateInfo";
-// import "./Form.css";
 
 const LoginForm = ({ submitForm }) => {
   const { handleChange, handleSubmit, values, errors } = useLogin(

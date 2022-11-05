@@ -19,8 +19,6 @@ const useLogin = (callback, validate) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    // setErrors(validate(values));
     setIsLogging(true);
     Axios.post("http://localhost:5000/login", {
       password: values.password,
@@ -28,7 +26,6 @@ const useLogin = (callback, validate) => {
     })
       .then((res) => {
         const results = res.data;
-        console.log(res.data);
         if (
           results["user"]["email"] === values.email &&
           results["user"]["password"] === values.password
@@ -37,7 +34,6 @@ const useLogin = (callback, validate) => {
           localStorage.setItem("login", results["user"]["_id"]);
         } else {
           alert("wrong email/password");
-          console.log(results);
         }
       })
       .catch((err) => {
@@ -49,7 +45,6 @@ const useLogin = (callback, validate) => {
   useEffect(() => {
     if (Object.keys(errors).length === 0 && isLogging) {
       console.log("callback");
-      // callback();
     } else {
       console.log("notcallback");
     }

@@ -8,7 +8,6 @@ function Rooms() {
   const [loggedIn, setLoggedIn] = useState(false);
   useEffect(() => {
     let data = localStorage.getItem("login");
-    // console.log(data);
     setLoggedIn(data !== null);
   }, []);
   const loggedout = () => {
