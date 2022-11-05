@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/hotel-management-system-mongo/static/css/main.2521599e.chunk.css",
+    "main.js": "/hotel-management-system-mongo/static/js/main.c41ed5c5.chunk.js",
+    "main.js.map": "/hotel-management-system-mongo/static/js/main.c41ed5c5.chunk.js.map",
+    "runtime-main.js": "/hotel-management-system-mongo/static/js/runtime-main.2bec670f.js",
+    "runtime-main.js.map": "/hotel-management-system-mongo/static/js/runtime-main.2bec670f.js.map",
+    "static/js/2.0a07c0e6.chunk.js": "/hotel-management-system-mongo/static/js/2.0a07c0e6.chunk.js",
+    "static/js/2.0a07c0e6.chunk.js.map": "/hotel-management-system-mongo/static/js/2.0a07c0e6.chunk.js.map",
+    "index.html": "/hotel-management-system-mongo/index.html",
+    "static/css/main.2521599e.chunk.css.map": "/hotel-management-system-mongo/static/css/main.2521599e.chunk.css.map",
+    "static/js/2.0a07c0e6.chunk.js.LICENSE.txt": "/hotel-management-system-mongo/static/js/2.0a07c0e6.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2bec670f.js",
+    "static/js/2.0a07c0e6.chunk.js",
+    "static/css/main.2521599e.chunk.css",
+    "static/js/main.c41ed5c5.chunk.js"
+  ]
+}
