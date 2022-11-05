@@ -7,6 +7,7 @@ router.post("/login", multer().none(), UserController.login);
 router.get("/api/rooms", multer().none(), UserController.getrooms);
 router.get("/api/getuserdata", multer().none(), UserController.getuserdata);
 router.get("/api/getroomdata", multer().none(), UserController.getroomdata);
+router.get("/api/getroomtypedata", multer().none(), UserController.getroomtypedata);
 router.post(
   "/api/updateroomdata",
   multer().none(),

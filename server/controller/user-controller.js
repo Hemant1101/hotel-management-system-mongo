@@ -81,6 +81,16 @@ const getroomdata = async (req, res) => {
   }
 };
 
+const getroomtypedata = async (req, res) => {
+  try {
+    const roomsdata = await Rooms.find({}).select('type');
+    res.status(200);
+    return res.status(200).json({ rooms: roomsdata });
+  } catch (error) {
+    return res.status(500).json({ message: "roomsdata not found" });
+  }
+};
+
 const updateroomdata = async (req, res) => {
   try {
     const usid = req.body.id;
@@ -90,19 +100,17 @@ const updateroomdata = async (req, res) => {
     const roombooked = req.body.roombooked;
     const leftrooms = req.body.leftrooms;
     const bill = req.body.bill;
-    await User.update(
+    await User.findOneAndUpdate(
+      { _id: usid },
       {
         checkin: checkin,
         checkout: checkout,
         bookedrooms: { type: roomtype, no_of_rooms: roombooked },
         totalbill: bill,
         paidbill: bill,
-      },
-      { where: { id: usid } }
-    ).then(() => {
-      Rooms.update({ availrooms: leftrooms }, { where: { type: roomtype } });
-    });
-    // console.log(usersdata);
+      }
+    );
+    await Rooms.findOneAndUpdate({ type: roomtype }, { availrooms: leftrooms });
     return res.status(200).json({ message: "room booked successfully" });
   } catch (error) {
     console.log("\n" + error);
@@ -116,5 +124,6 @@ module.exports = {
   getrooms,
   getuserdata,
   getroomdata,
+  getroomtypedata,
   updateroomdata,
 };

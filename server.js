@@ -6,16 +6,6 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 const userRoute = require("./server/router/user-router");
 const { admin, router } = require("./server/admin/admin-option");
-// const router = AdminBroExpress.buildAuthenticatedRouter(admin, {
-//   authenticate: async (email, password) => {
-//     if (adminLogin.password === password && adminLogin.email === email) {
-//       return adminLogin;
-//     }
-//     return null;
-//   },
-//   cookieName: "user",
-//   cookiePassword: "some-secret-password-used-to-secure-cookie",
-// });
 
 const corsOptions = {
   origin: true,

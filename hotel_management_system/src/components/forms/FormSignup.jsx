@@ -47,7 +47,7 @@ const FormSignup = ({ submitForm }) => {
             className="form-input"
             type="number"
             name="number"
-            placeholder="Enter your email"
+            placeholder="Enter your Phone Number"
             value={values.number}
             onChange={handleChange}
           />

@@ -1,10 +1,19 @@
-import React, { useState } from "react";
+import Axios from "axios";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const MakeBookings = (props) => {
   let navigate = useNavigate();
+  const [availroomtypes,setavailroomtypes] = useState([]);
+  useEffect(()=>{
+    Axios.get("http://localhost:5000/api/getroomtypedata").then((res) => {
+      const result = res.data;
+      setavailroomtypes(result["rooms"]);
+    });
+  },[]);
+
   const [values, setValues] = useState({
-    userid: props.userdetails["id"],
+    userid: props.userdetails["_id"],
     username: props.userdetails["name"],
     email: props.userdetails["email"],
     phonenumber: props.userdetails["phonenumber"],
@@ -47,7 +56,7 @@ const MakeBookings = (props) => {
                 className="form-input"
                 type="text"
                 name="email"
-                placeholder="Enter your username"
+                placeholder="Enter your email address"
                 value={values.email}
                 onChange={handleChange}
               />
@@ -58,7 +67,7 @@ const MakeBookings = (props) => {
                 className="form-input"
                 type="text"
                 name="phonenumber"
-                placeholder="Enter your username"
+                placeholder="Enter your phone number"
                 value={values.phonenumber}
                 onChange={handleChange}
               />
@@ -72,10 +81,9 @@ const MakeBookings = (props) => {
                 value={values.type}
               >
                 <option value="">select a room type</option>
-                <option value="delux">Delux</option>
-                <option value="standard">Standard</option>
-                <option value="premeium">Premium</option>
-                <option value="twin bed">Twin bed</option>
+                {availroomtypes.map((roomtype)=>{
+                  return (<option value={roomtype["type"]}>{roomtype["type"]}</option>);
+                })}
               </select>
             </div>
             <div className="form-inputs col-lil">

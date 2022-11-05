@@ -10,7 +10,7 @@ const PaymentPage = (props) => {
     username: props.bookingdetail["username"],
     email: props.bookingdetail["email"],
     type: props.bookingdetail["type"],
-    roomnumber: "",
+    roomnumber: 0,
     number: props.bookingdetail["phonenumber"],
   });
   const [roomcount, setroomcount] = useState("");
@@ -57,7 +57,7 @@ const PaymentPage = (props) => {
       checkout: props.bookingdetail["checkout"],
       leftrooms: roomcount - values.roomnumber,
       roombooked: values.roomnumber,
-      bill: price,
+      bill: values.roomnumber * days * price,
     })
       .then(() => {
         swal("Payment Successful!", "Your Room has been booked!", "success");

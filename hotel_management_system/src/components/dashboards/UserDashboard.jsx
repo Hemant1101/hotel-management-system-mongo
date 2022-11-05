@@ -11,12 +11,10 @@ function UserDashboard() {
   const [bookingdata, setbookingdata] = useState({});
   const [sidebar, setsidebar] = useState(false);
   const [closeBtn, setcloseBtn] = useState(false);
-  const [userid, setuserid] = useState("");
   const [username, setusername] = useState("");
   const [useremail, setuseremail] = useState("");
   async function getdata() {
     const usid = String(localStorage.getItem("login"));
-    setuserid(usid);
     Axios.get("http://localhost:5000/api/getuserdata", {
       params: {
         searchid: usid,
