@@ -17,7 +17,7 @@ import LoginPage from "./components/pages/LoginPage";
 
 function App() {
   return (
-    <Router>
+    <Router basename="/hotel-management-system-mongo">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/sign-up" element={<SignUp />} />
