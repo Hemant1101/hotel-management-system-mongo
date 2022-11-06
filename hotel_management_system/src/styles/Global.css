@@ -478,7 +478,7 @@ body {
 .nav-menu {
   display: -ms-grid;
   display: grid;
-  
+  -ms-grid-columns: (auto)[5];
       grid-template-columns: repeat(5, auto);
   grid-gap: 10px;
   list-style: none;
@@ -835,6 +835,9 @@ body {
     padding: 2px 0;
     max-width: 100%;
   }
+  .room .content {
+    min-width: 400px;
+  }
   .room-flex-contain {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -922,6 +925,7 @@ body {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    height: auto;
   }
   .aboutUs .left-content {
     width: 85vw;
@@ -1377,7 +1381,9 @@ footer .footerContainer a {
   text-decoration: none;
 }
 
-
+.paymentpage {
+  /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (and change the direction - make the "cart" column go on top) */
+}
 
 .paymentpage .row {
   display: -ms-flexbox;

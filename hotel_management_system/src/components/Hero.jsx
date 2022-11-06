@@ -9,8 +9,8 @@ function Hero(props) {
         alt="hero"
       />
       <div className="content">
-        <h1 className="h1">heading{props.heading}</h1>
-        <h3 className="h3">subtitle{props.subtitle}</h3>
+        <h1 className="h1">Welcome{props.heading}</h1>
+        <h3 className="h3">To Our Hotel{props.subtitle}</h3>
         <p className="p">
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex quasi
           animi quam ad aliquid praesentium voluptates laborum maiores dolorem

@@ -149,6 +149,9 @@
     padding: 2px 0;
     max-width: 100%;
   }
+  .room .content{
+    min-width: 400px;
+  }
   .room-flex-contain {
     flex-direction: column;
   }
