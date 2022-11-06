@@ -7,7 +7,7 @@ function Room() {
   useEffect(() => {
     getData();
     async function getData() {
-      const response = await fetch("http://localhost:5000/api/rooms");
+      const response = await fetch(process.env.REACT_APP_API_URL+"/api/rooms");
       const data = await response.json();
       setRoomitems(data["rooms"]);
     }

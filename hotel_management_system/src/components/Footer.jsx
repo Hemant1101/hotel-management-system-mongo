@@ -7,7 +7,7 @@ const Footer = () => {
         <div className="footerContainer">
           <p>Hotel Management System</p>
           <a
-            href="http://localhost:5000/admin/login"
+            href="#"
             target="_blank"
             rel="noreferrer"
           >

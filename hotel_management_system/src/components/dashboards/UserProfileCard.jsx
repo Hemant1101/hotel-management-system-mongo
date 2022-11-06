@@ -12,7 +12,6 @@ const UserdetailsCard = (props) => {
 };
 
 const UserProfileCard = (props) => {
-  console.log(props.userdetails);
 
   return (
     <>

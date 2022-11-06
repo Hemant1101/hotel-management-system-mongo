@@ -15,7 +15,7 @@ function UserDashboard() {
   const [useremail, setuseremail] = useState("");
   async function getdata() {
     const usid = String(localStorage.getItem("login"));
-    Axios.get("http://localhost:5000/api/getuserdata", {
+    Axios.get(process.env.REACT_APP_API_URL+"/api/getuserdata", {
       params: {
         searchid: usid,
       },

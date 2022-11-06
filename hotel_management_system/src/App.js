@@ -1,4 +1,5 @@
 import React from "react";
+import "dotenv";
 import "./styles/App.css";
 import "./styles/Global.css";
 // import Navbar from "./components/Navbar";

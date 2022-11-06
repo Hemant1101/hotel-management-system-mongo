@@ -24,7 +24,7 @@ const PaymentPage = (props) => {
   };
   async function getroomdetail() {
     const searchtype = props.bookingdetail["type"];
-    Axios.get("http://localhost:5000/api/getroomdata", {
+    Axios.get(process.env.REACT_APP_API_URL+"/api/getroomdata", {
       params: {
         searchid: searchtype,
       },
@@ -50,7 +50,7 @@ const PaymentPage = (props) => {
   }, []);
   const handlesubmit = async (e) => {
     e.preventDefault();
-    await Axios.post("http://localhost:5000/api/updateroomdata", {
+    await Axios.post(process.env.REACT_APP_API_URL+"/api/updateroomdata", {
       id: values.userid,
       roomtype: values.type,
       checkin: props.bookingdetail["checkin"],

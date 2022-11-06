@@ -6,7 +6,7 @@ const MakeBookings = (props) => {
   let navigate = useNavigate();
   const [availroomtypes,setavailroomtypes] = useState([]);
   useEffect(()=>{
-    Axios.get("http://localhost:5000/api/getroomtypedata").then((res) => {
+    Axios.get(process.env.REACT_APP_API_URL+"/api/getroomtypedata").then((res) => {
       const result = res.data;
       setavailroomtypes(result["rooms"]);
     });

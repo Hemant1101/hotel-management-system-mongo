@@ -113,7 +113,7 @@ const Navbar = React.memo((props) => {
           </>
         ) : (
           <>
-            <a href="/userdashboard" className="dashboard-icon">
+            <a href="/hotel-management-system-mongo/userdashboard" className="dashboard-icon">
               <i className="fa fa-user user-icon"></i>
             </a>
             <button className="btn" onClick={logout}>
