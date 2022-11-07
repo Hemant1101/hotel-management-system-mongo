@@ -150,9 +150,12 @@
     max-width: 100%;
   }
   .room .content{
-    min-width: 400px;
+    width: 80%;
+    min-width: 300px;
+    height: 300px;
   }
   .room-flex-contain {
+    max-width: 90%;
     flex-direction: column;
   }
 }

@@ -18,7 +18,7 @@ function Rooms() {
     <>
       <Navbar loggedIn={loggedIn} setLogValue={loggedout} />
       <div className="rooms-contaner">
-        <Hero imgaddress="https://www.berjayahotel.com/sites/default/files/hotel-room-type/makati/01-deluxe-room.jpg" />
+        <Hero imgaddress="/images/hero-img.jpg" />
         <RoomsContent />
         <Room />
       </div>
